@@ -1,5 +1,5 @@
 
-package edu.cc.examples.api;
+package edu.cc.examples.api.user;
 
 import java.io.Serializable;
 import javax.persistence.*;

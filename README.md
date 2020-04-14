@@ -1,4 +1,7 @@
-# Spring
+# Spring Data Rest
+
+En este repositorio vamos a crear un API Rest con Spring sobre diferentes recurso aislados
+persistiendo la información con JPA en una Instancia de Base de datos MySQL en AWS.
 
 
 ## Requisitos
@@ -146,7 +149,7 @@ $ export AWS_MYSQL_DB_USERNAME="clave"
 ```
 NOTA: Crea las variables con los nombres correctos de tu instancia.
 
-## Crear una entidad (entity) como modelo
+## Crear una entidad (entity)
 
 Dentro de la carpeta del paquete crea un directorio models y dentro incluye la entidad Persona:
 
@@ -176,7 +179,7 @@ public class User implements Serializable {
 }
 ```
 
-## Crear la interface DAO para acceso a la base de datos
+## Crear la interface para acceso a la base de datos
 
 Dentro de la carpeta del paquete crea la interface que herede de CrudRepository:
 
@@ -199,7 +202,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
 ```
 
-## Compila el proyecto y crea el ejecutable
+## Compilar el proyecto y crear el ejecutable
 
 Cambia los permisos al fichero 'mvnw' para que sea ejecutable con:
 
@@ -207,7 +210,8 @@ Cambia los permisos al fichero 'mvnw' para que sea ejecutable con:
 $ chmod 744 mvnw
 ```
 
-Crea el paquete .jar del proyecto
+Compilar el proyecto y crear el paquete .jar del proyecto con:
+
 ```
 ./mvnw clean package
 ```
@@ -228,6 +232,7 @@ $ java -jar ficheroproyecto.jar
 
 
 ## Prueba la API desde POSTMAN
+
 
 Realiza una petición GET a http://IP-Servidor:8080/users
 
